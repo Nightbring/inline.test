@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+@media (width > 1170px) {
+    :root {
+        --main-width: 1140px;
+    }
+}
+
+@media (width < 1170px) {
+    :root {
+        --main-width: 100%;
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    background-color: #161616;
+    color: #FFFFFF;
+    font-family: 'Roboto Condensed';
+}
+
+div, form, ul, ol, li {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 300;
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 2px;
+    margin: 20px auto 20px;
+    background: #5091da;
+}
+
+p {
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+button, input {
+    position: unset;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    border: none;
+    background: unset;
+    color: inherit;
+    outline: none;
+}
+
+.container {
+    background-color: #161616;
+    width: 100%;
+    height: auto;
+    align-items: center;
+}
+
+.container > div {
+    align-items: center;
+    width: var(--main-width);
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header-container {
+    position: fixed;
+    top: 0;
+    width: calc(100% - 2px);
+    border: 1px solid #777777;
+}
+
+.header {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.nav-menu {
+    flex-direction: row;
+}
+
+.nav-menu-elem {
+    font-size: 14px;
+    font-weight: 700;
+    transition: color 200ms ease-out;
+}
+
+.nav-menu-elem > a {
+    padding: 15px;
+}
+
+.nav-menu-elem.active, .nav-menu-elem:hover {
+    color: #5091DA;
+}
+
+.main-container {
+    margin-top: 52px;
+    flex-grow: 1;
+}
+
+.main {
+    height: auto;
+}
+
+.section {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.footer {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 30px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    margin: 25px;
+    text-align: center;
+    font-size: 120px;
+    font-weight: 700;
+}
+
+.update-menu {
+    margin: auto;
+    flex-direction: row;
+    margin-bottom: 45px;
+}
+
+.button {
+    width: 238px;
+    height: 70px;
+    margin: 0 26px;
+
+    border-bottom: 1px solid #777777;
+    background: #1E1E1E;
+
+    justify-content: center;
+
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    cursor: pointer;
+
+    transition: color 200ms ease-out;
+}
+
+.button:hover {
+    color: #5091da;
+}
+
+.pseudo-console {
+    width: 100%;
+    height: auto;
+    min-height: 260px;
+    padding: 6px 11px;
+    border-bottom: 1px solid #777777;
+    background: #1E1E1E;
+
+    font-family: Arial;
+    font-size: 14px;
+}
+.find-form {
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 44px;
+}
+
+.find-input {
+    height: 50px;
+    flex-grow: 1;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 10px;
+    border-bottom: 1px solid #777777;
+    background: #1E1E1E;
+}
+
+.find-input:focus {
+    background: #545454;
+}
+
+.search-result {
+    margin-bottom: 40px;
+}
+
+.post {
+    padding: 13px 10px;
+}
+
+.post:nth-child(2n-1) {
+    background: #1E1E1E;
+}
+.post-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.post-title::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100px;
+    background: #5091DA;
+    margin-left: 5px;
+}
+
+.post-comments {
+    padding: 0 50px;
+    margin-bottom: 8px;
+}
+
+.post-comment {
+    padding-left: 19px;
+}
+
+.comment-title {
+    flex-direction: row;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.comment-body {
+    padding-left: 22px;
+}
+
+.error {
+    border-color: #770000;
+}
+
+.select {
+    text-decoration: underline;
+}
