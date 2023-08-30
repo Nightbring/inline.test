@@ -57,38 +57,44 @@ function findPosts(keyword) {
         let posts = JSON.parse(r)
         console.log(posts);
 
-        posts.forEach(async e => {
-            let p = document.createElement('div');
-            p.className = 'post';
+        if (posts.length != 0){
 
-            let pt = document.createElement('div');
-            pt.className = 'post-title';
-            pt.innerHTML = e.title;
-            p.appendChild(pt);
-            
-            let pc = document.createElement('div');
-            pc.className = 'post-comments';
-
-            e.comments.forEach(j => {
-                let c = document.createElement('div');
-                c.className = 'post-comment';
-
-                let ct = document.createElement('div');
-                ct.className = 'comment-title';
-                ct.innerHTML = '<span>' + j.name + '</span><span>&nbsp;|&nbsp;</span><span>' + j.email + '</span>';
-                c.appendChild(ct);
-
-                let cb = document.createElement('div');
-                cb.className = 'comment-body';
-                cb.innerHTML = '<p>' + j.body.replaceAll('\n', '<br>').replaceAll(keyword, '<span class="select">' + keyword + '</span>') + '</p>';
-                c.appendChild(cb);
-
-                pc.appendChild(c);
+            posts.forEach(async e => {
+                let p = document.createElement('div');
+                p.className = 'post';
+    
+                let pt = document.createElement('div');
+                pt.className = 'post-title';
+                pt.innerHTML = e.title;
+                p.appendChild(pt);
+                
+                let pc = document.createElement('div');
+                pc.className = 'post-comments';
+    
+                e.comments.forEach(j => {
+                    let c = document.createElement('div');
+                    c.className = 'post-comment';
+    
+                    let ct = document.createElement('div');
+                    ct.className = 'comment-title';
+                    ct.innerHTML = '<span>' + j.name + '</span><span>&nbsp;|&nbsp;</span><span>' + j.email + '</span>';
+                    c.appendChild(ct);
+    
+                    let cb = document.createElement('div');
+                    cb.className = 'comment-body';
+                    cb.innerHTML = '<p>' + j.body.replaceAll('\n', '<br>').replaceAll(keyword, '<span class="select">' + keyword + '</span>') + '</p>';
+                    c.appendChild(cb);
+    
+                    pc.appendChild(c);
+                });
+                p.appendChild(pc);
+    
+                sr.appendChild(p);
             });
-            p.appendChild(pc);
+        } else {
+            sr.innerHTML = 'Ничего не найдено';
+        }
 
-            sr.appendChild(p);
-        });
 
     });
 }
